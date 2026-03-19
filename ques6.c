@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+    int a, b, temp;
+    printf("enter first number:");
+    scanf("%d", &a);
+    printf("enter second number:");
+    scanf("%d",&b);
+    printf("Before swapping: a = %d, b = %d\n", a, b);
+    temp = a;
+    a = b;
+    b = temp;
+    printf("After swapping: a = %d, b = %d\n", a, b);
+    return 0;
+}

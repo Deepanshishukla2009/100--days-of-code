@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    long long num;
+    int count[10] = {0};
+    int max_digit = 0, max_count = 0;
+
+    printf("Enter a number: ");
+    scanf("%lld", &num);
+
+    // Handle negative numbers
+    num = llabs(num);
+
+    // Count digits
+    if (num == 0) {
+        count[0] = 1;
+    } else {
+        while (num > 0) {
+            int digit = num % 10;
+            count[digit]++;
+            num /= 10;
+        }
+    }
+
+    // Find the digit with the maximum count (smallest digit in case of tie)
+    for (int i = 0; i < 10; i++) {
+        if (count[i] > max_count) {
+            max_count = count[i];
+            max_digit = i;
+        }
+    }
+
+    printf("Most frequent digit: %d\n", max_digit);
+    return 0;
+}

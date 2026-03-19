@@ -1,0 +1,15 @@
+===================================================
+Order ID: 1761728715
+Timestamp: Wed Oct 29 14:35:15 2025
+
+--- Customer Details ---
+Name: deepanshi shukla
+Phone: 9369632241
+Address: a-200 world bank barra kanpur
+
+--- Order Items (1) ---
+  - [MED] Antacid Gel 170ml (Qty: 21 @ 85.75 each)
+
+--- Total Amount: 1800.75 ---
+===================================================
+
