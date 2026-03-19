@@ -1,0 +1,53 @@
+Q67: Insert an element in an array at a given position.
+
+/*
+Sample Test Cases:
+Input 1:
+4
+10 20 30 40
+2 15
+Output 1:
+10 20 15 30 40
+
+*/
+
+#include <stdio.h>
+#define MAX_SIZE 100
+
+int main() {
+    int arr[MAX_SIZE];
+    int i, size, num, pos;
+
+    // Input size and elements of the array
+    printf("Enter size of the array: ");
+    scanf("%d", &size);
+
+    printf("Enter elements in array: ");
+    for(i = 0; i < size; i++)
+        scanf("%d", &arr[i]);
+
+    // Input new element and position to insert
+    printf("Enter element to insert: ");
+    scanf("%d", &num);
+    printf("Enter the position to insert (1 to %d): ", size+1);
+    scanf("%d", &pos);
+
+    // Check for valid position:
+    if(pos > size+1 || pos <= 0) {
+        printf("Invalid position! Please enter position between 1 to %d\n", size+1);
+    } else {
+        // Shift elements to right
+        for(i = size; i >= pos; i--)
+            arr[i] = arr[i-1];
+        arr[pos-1] = num;
+        size++; // Increase size
+
+        printf("Array elements after insertion: ");
+        for(i = 0; i < size; i++)
+            printf("%d ", arr[i]);
+        printf("\n");
+    }
+
+    return 0;
+}
+

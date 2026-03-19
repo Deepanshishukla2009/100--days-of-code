@@ -1,0 +1,60 @@
+Q18: Write a program to assign grades based on a percentage input.
+
+/*
+Sample Test Cases:
+Input 1:
+95
+Output 1:
+Grade A
+
+Input 2:
+82
+Output 2:
+Grade B
+
+Input 3:
+68
+Output 3:
+Grade D
+
+Input 4:
+50
+Output 4:
+Grade F
+
+*/
+
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+    float percentage;
+    char grade;
+    printf("enter the percentage:");
+    scanf("%f",&percentage);
+    switch((percentage>=90)?'A':(percentage>=80)?'B':(percentage>=70)?'C':(percentage>=60)?'D':(percentage>=50)?'E':'F')
+    {
+        case 'A':
+        printf("grade:A\n");
+        break;
+        case 'B':
+        printf("grade:B\n");
+        break;
+        case 'C':
+        printf("grade:C\n");
+        break;
+        case 'D':
+        printf("grade:D\n");
+        break;
+        case 'E':
+        printf("grade:E\n");
+        break;
+        case 'F':
+        printf("grade:F\n");
+        break;
+        default:
+        printf("invalid percentage\n");
+    }
+    return 0;
+}

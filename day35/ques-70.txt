@@ -1,0 +1,58 @@
+Q70: Rotate an array to the right by k positions.
+
+/*
+Sample Test Cases:
+Input 1:
+5
+1 2 3 4 5
+2
+Output 1:
+4 5 1 2 3
+
+*/
+
+
+#include <stdio.h>
+void rotateRight(int arr[], int n, int k) {
+    k = k % n; // In case k > n
+    if (k == 0) return;
+
+    int temp[k];
+    // Copy last k elements to temp
+    for (int i = 0; i < k; i++)
+        temp[i] = arr[n - k + i];
+
+    // Shift the rest to the right
+    for (int i = n - 1; i >= k; i--)
+        arr[i] = arr[i - k];
+
+    // Copy temp to the beginning
+    for (int i = 0; i < k; i++)
+        arr[i] = temp[i];
+}
+
+int main() {
+    int n, k;
+    printf("Enter array size: ");
+    scanf("%d", &n);
+    if (n <= 0) {
+        printf("Array size must be positive.\n");
+        return 1;
+    }
+    int arr[n];
+    printf("Enter %d elements: ", n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    printf("Enter k (number of positions to rotate): ");
+    scanf("%d", &k);
+
+    rotateRight(arr, n, k);
+
+    printf("Rotated array: ");
+    for (int i = 0; i < n; i++)
+        printf("%d ", arr[i]);
+    printf("\n");
+
+    return 0;
+}
