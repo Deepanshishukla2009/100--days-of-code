@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+
+int is_vowel(char c) {
+    c = tolower((unsigned char)c);
+    return c=='a' || c=='e' || c=='i' || c=='o' || c=='u';
+}
+
+int main(void) {
+    char s[10000];
+    if (!fgets(s, sizeof(s), stdin)) return 0;
+    size_t len = strlen(s);
+    if (len && s[len-1] == '\n') s[len-1] = '\0';
+
+    char out[10000];
+    size_t j = 0;
+    for (size_t i = 0; s[i] != '\0'; ++i) {
+        if (!is_vowel(s[i])) out[j++] = s[i];
+    }
+    out[j] = '\0';
+
+    printf("%s\n", out);
+    return 0;
+}
